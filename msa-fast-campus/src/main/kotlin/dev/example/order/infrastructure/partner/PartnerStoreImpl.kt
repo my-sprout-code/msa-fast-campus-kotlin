@@ -1,4 +1,4 @@
-package dev.example.order.infrastructure
+package dev.example.order.infrastructure.partner
 
 import dev.example.order.domain.partner.Partner
 import dev.example.order.domain.partner.PartnerStore
