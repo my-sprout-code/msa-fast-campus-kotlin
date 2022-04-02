@@ -1,5 +1,6 @@
 package dev.example.order.domain.partner
 
+import dev.example.order.common.exception.InvalidParamException
 import dev.example.order.common.util.TokenGenerator
 import dev.example.order.domain.AbstractEntity
 import org.apache.commons.lang3.StringUtils
@@ -23,9 +24,9 @@ class Partner(
 
         ) : AbstractEntity() {
     init {
-        require(StringUtils.isNotBlank(partnerName))
-        require(StringUtils.isNotBlank(businessNo))
-        require(StringUtils.isNotBlank(email))
+        if (StringUtils.isEmpty(partnerName)) throw InvalidParamException("empty partnerName");
+        if (StringUtils.isEmpty(businessNo)) throw InvalidParamException("empty businessNo");
+        if (StringUtils.isEmpty(email)) throw InvalidParamException("empty email");
     }
 
     fun enable() {

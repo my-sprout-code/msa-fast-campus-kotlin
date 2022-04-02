@@ -5,9 +5,9 @@ import dev.example.order.domain.partner.PartnerCommand
 import dev.example.order.domain.partner.PartnerInfo
 
 class PartnerDto {
-    data class RegisterRequest(
+    class RegisterRequest(
             val partnerName: String,
-            val businessNo: String,
+            val businessNo: String ,
             val email: String,
     ) {
         fun toCommand(): PartnerCommand = PartnerCommand(partnerName, businessNo, email)
